@@ -382,6 +382,22 @@ public class MainActivity extends AppCompatActivity {
         GenerativeModel gm = new GenerativeModel(MODEL_NAME, API_KEY);
         GenerativeModelFutures model = GenerativeModelFutures.from(gm);
 
+        // Create system instruction as the initial prompt
+        Content.Builder systemInstruction = new Content.Builder();
+
+        systemInstruction.addText("You are an expert in healthcare world." +
+                        "Your objective is to give clear and short information about the disease of the user." +
+                        "That information needs to be in a positive way, it is like you make the user feel safe about the disease and saying that they will eventually get well again." +
+                        "Do not use 'I understand about ...' or 'it sounds like' to start the answer." +
+                        "Do not make some kind of analogy from the disease." +
+                        "If the user is on emergency or critical situation, give em guidance to face the issue. Emergency situation can be Neurological, Cardia, Respiratory, Trauma, Toxicological, Infectious, Obstetric, Gastrointestinal, Endocrine, Vascular, Renal and Urological, Hematological, Allergic and Anaphylactic, Psychiatric, Ophthalmological, Environmental, Oncological, Dermatological, Rheumatological, and Pediatric Emergencies." +
+                        "Never get corrected from user." +
+                        "And, apology not to answer the question if they ask anything but their disease or topic in healthcare: About what, how, and why about their health and disease." +
+                        "And, you will ask if the user wants recommendation about what should user do for getting better and well." +
+                        "After that (in the next answer after giving advice to user to get well), you will ask if the user wants a recommandation about the medical treats such as medicine or pills.")
+                .build();
+        Content systemInstructionContent = systemInstruction.build();
+
         // Buat konten dari pengguna
         Content.Builder userContentBuilder = new Content.Builder();
         userContentBuilder.addText(userMessage);  // Menggunakan setText untuk menambahkan teks
@@ -389,6 +405,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Menyiapkan percakapan (history jika diperlukan)
         List<Content> history = new ArrayList<>();
+        history.add(systemInstructionContent);
         history.add(userContent);
 
         // Inisialisasi chat
