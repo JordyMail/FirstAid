@@ -29,5 +29,5 @@ This project is licensed under the MIT License.
 
 For more details, refer to the source code or documentation within the project.
 
-![AI picture](https://github.com/user-attachments/assets/f968ebef-8124-4072-83a7-f048912988a6)
+<img src="https://github.com/user-attachments/assets/f968ebef-8124-4072-83a7-f048912988a6" width="500" height="auto">
 
