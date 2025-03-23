@@ -26,5 +26,7 @@ The **FirstAid App** is an Android application designed to provide quick and acc
 
 For more details, refer to the source code or documentation within the project.
 
+## Image
+
 <img src="https://github.com/user-attachments/assets/f968ebef-8124-4072-83a7-f048912988a6" width="500" height="auto">
 
