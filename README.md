@@ -22,9 +22,6 @@ The **FirstAid App** is an Android application designed to provide quick and acc
 2. Open the project in Android Studio.
 3. Build and run the application on an Android device or emulator.
 
-## License
-This project is licensed under the MIT License.
-
 ---
 
 For more details, refer to the source code or documentation within the project.
